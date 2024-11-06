@@ -16,7 +16,6 @@ RUN jbang trust add https://github.com/apache/camel
 
 # used to initiliaze dependencies in the docker image
 RUN jbang -Dcamel.jbang.version=$CAMEL_VERSION camel@apache/camel version
-# RUN jbang  camel@apache/camel version
 
 RUN echo "# /bin/sh" >> /run-camel.sh \
     && echo "jbang -Dcamel.jbang.version=$CAMEL_VERSION camel@apache/camel \$@" >> /run-camel.sh \
@@ -24,4 +23,3 @@ RUN echo "# /bin/sh" >> /run-camel.sh \
 
 # ENTRYPOINT [ "jbang", "-Dcamel.jbang.version=4.4.0", "camel@apache/camel"]
 ENTRYPOINT [ "/bin/sh", "/run-camel.sh", "run", "/integrations/*"]
-# ENTRYPOINT [ "jbang", "camel@apache/camel"]
