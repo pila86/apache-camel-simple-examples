@@ -1,0 +1,9 @@
+services:
+
+  camel-jbang:
+    build: 
+      context: ./camel-jbang
+      args:
+        CAMEL_VERSION: 4.8.1
+    volumes:
+     - ./examples/hello-world.camel.xml:/integrations/hello-world.camel.xml

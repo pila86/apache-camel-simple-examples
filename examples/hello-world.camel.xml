@@ -1,0 +1,7 @@
+<route>
+    <from uri="timer://my-timer?period=5000" />
+    <setBody>
+        <constant>Hello, world!</constant>
+    </setBody>
+    <to uri="log:com.example" />
+</route>
